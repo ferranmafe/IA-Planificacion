@@ -1,4 +1,4 @@
-(define (domain dominio_hotel)
+(define (domain dominio_hotel_ext_3)
   (:requirements :strips :fluents :adl)
   (:types
     habitacion
@@ -6,8 +6,7 @@
   )
   (:predicates
     (habitacion-reservada ?r - reserva ?h - habitacion)
-    (reserva-hecha ?r - reserva)
-    (reserva-descartada ?r - reserva)
+    (reserva-comprobada ?r - reserva)
   )
   (:functions
     (personas-reserva ?r - reserva)
@@ -20,12 +19,7 @@
   (:action asignar-reserva
     :parameters (?h - habitacion ?r - reserva)
     :precondition (and
-      (not
-        (or
-          (reserva-hecha ?r)
-          (reserva-descartada ?r)
-        )
-      )
+      (not (reserva-comprobada ?r))
       (<= (personas-reserva ?r) (plazas-habitacion ?h))
       (not
         (exists (?re - reserva)
@@ -47,7 +41,7 @@
       )
     )
     :effect (and
-      (reserva-hecha ?r)
+      (reserva-comprobada ?r)
       (habitacion-reservada ?r ?h)
       (increase (plazas-desperdiciadas) (- (plazas-habitacion ?h) (personas-reserva ?r)))
     )
@@ -55,12 +49,7 @@
 
   (:action descartar-reserva
     :parameters (?r - reserva)
-    :precondition (not
-      (or
-        (reserva-hecha ?r)
-        (reserva-descartada ?r)
-      )
-    )
-    :effect (and (reserva-descartada ?r) (increase (reservas-descartadas) 1))
+    :precondition (not (reserva-comprobada ?r))
+    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 1))
   )
 )
