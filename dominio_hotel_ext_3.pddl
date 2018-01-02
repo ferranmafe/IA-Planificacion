@@ -8,7 +8,6 @@
     (habitacion-reservada ?r - reserva ?h - habitacion)
     (reserva-hecha ?r - reserva)
     (reserva-descartada ?r - reserva)
-    (habitacion-abierta ?h - habitacion)
   )
   (:functions
     (personas-reserva ?r - reserva)
@@ -17,7 +16,6 @@
     (fin-reserva ?r - reserva)
     (reservas-descartadas)
     (plazas-desperdiciadas)
-    (habitaciones-abiertas)
   )
   (:action asignar-reserva
     :parameters (?h - habitacion ?r - reserva)
@@ -52,9 +50,6 @@
       (reserva-hecha ?r)
       (habitacion-reservada ?r ?h)
       (increase (plazas-desperdiciadas) (- (plazas-habitacion ?h) (personas-reserva ?r)))
-      (when (not (habitacion-abierta ?h))
-        (and (habitacion-abierta ?h) (increase (habitaciones-abiertas) 1))
-      )
     )
   )
 

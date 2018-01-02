@@ -23,11 +23,18 @@
     (= (inicio-reserva r005) 15)
     (= (fin-reserva r005) 21)
     (= (reservas-descartadas) 0)
+    (= (plazas-desperdiciadas) 0)
+    (= (habitaciones-abiertas) 0)
   )
 
   (:goal
     (forall (?r - reserva) (or (reserva-hecha ?r) (reserva-descartada ?r)))
   )
-  (:metric minimize (reservas-descartadas)
+  (:metric minimize
+    (+
+      (* (reservas-descartadas) 3)
+      (* (plazas-desperdiciadas) 1)
+      (* (habitaciones-abiertas) 2)
+    )
   )
 )

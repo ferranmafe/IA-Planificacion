@@ -8,7 +8,6 @@
     (habitacion-reservada ?r - reserva ?h - habitacion)
     (reserva-hecha ?r - reserva)
     (reserva-descartada ?r - reserva)
-    (habitacion-abierta ?h - habitacion)
   )
   (:functions
     (personas-reserva ?r - reserva)
@@ -16,8 +15,6 @@
     (inicio-reserva ?r - reserva)
     (fin-reserva ?r - reserva)
     (reservas-descartadas)
-    (plazas-desperdiciadas)
-    (habitaciones-abiertas)
   )
   (:action asignar-reserva
     :parameters (?h - habitacion ?r - reserva)
@@ -34,28 +31,15 @@
           (and
             (habitacion-reservada ?re ?h)
             (or
-              (and
-                (>= (inicio-reserva ?re) (inicio-reserva ?r))
-                (<= (inicio-reserva ?re) (fin-reserva ?r)))
-              (and
-                (>= (fin-reserva ?re) (inicio-reserva ?r))
-                (<= (fin-reserva ?re) (fin-reserva ?r)))
-              (and
-                (>= (inicio-reserva ?r) (inicio-reserva ?re))
-                (<= (fin-reserva ?r) (fin-reserva ?re)))
+              (and (>= (inicio-reserva ?re) (inicio-reserva ?r)) (<= (inicio-reserva ?re) (fin-reserva ?r)))
+              (and (>= (fin-reserva ?re) (inicio-reserva ?r)) (<= (fin-reserva ?re) (fin-reserva ?r)))
+              (and (>= (inicio-reserva ?r) (inicio-reserva ?re)) (<= (fin-reserva ?r) (fin-reserva ?re)))
             )
           )
         )
       )
     )
-    :effect (and
-      (reserva-hecha ?r)
-      (habitacion-reservada ?r ?h)
-      (increase (plazas-desperdiciadas) (- (plazas-habitacion ?h) (personas-reserva ?r)))
-      (when (not (habitacion-abierta ?h))
-        (and (habitacion-abierta ?h) (increase (habitaciones-abiertas) 1))
-      )
-    )
+    :effect (and (reserva-hecha ?r) (habitacion-reservada ?r ?h) )
   )
 
   (:action descartar-reserva
