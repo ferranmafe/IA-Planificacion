@@ -93,13 +93,16 @@ def generate_metrics(ext):
     metrics += "\t\t(+\n"
     if ext == 1:
         metrics += "\t\t\t(* (reservas-descartadas) 1)\n"
+        metrics += "\t\t\t0\n"
     elif ext == 3:
         metrics += "\t\t\t(* (reservas-descartadas) 3)\n"
         metrics += "\t\t\t(* (plazas-desperdiciadas) 1)\n"
     elif ext == 4:
         metrics += "\t\t\t(* (reservas-descartadas) 3)\n"
-        metrics += "\t\t\t(* (habitaciones-abiertas) 2)\n"
-        metrics += "\t\t\t(* (plazas-desperdiciadas) 1)\n"
+        metrics += "\t\t\t(+\n"
+        metrics += "\t\t\t\t(* (habitaciones-abiertas) 2)\n"
+        metrics += "\t\t\t\t(* (plazas-desperdiciadas) 1)\n"
+        metrics += "\t\t\t)\n"
     metrics += "\t\t)\n"
     metrics += "\t)\n"
     return metrics
