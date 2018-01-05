@@ -25,20 +25,29 @@
           (and
             (habitacion-reservada ?re ?h)
             (or
-              (and (>= (inicio-reserva ?re) (inicio-reserva ?r)) (<= (inicio-reserva ?re) (fin-reserva ?r)))
-              (and (>= (fin-reserva ?re) (inicio-reserva ?r)) (<= (fin-reserva ?re) (fin-reserva ?r)))
-              (and (>= (inicio-reserva ?r) (inicio-reserva ?re)) (<= (fin-reserva ?r) (fin-reserva ?re)))
+              (and
+                (>= (inicio-reserva ?re) (inicio-reserva ?r))
+                (<= (inicio-reserva ?re) (fin-reserva ?r))
+              )
+              (and
+                (>= (fin-reserva ?re) (inicio-reserva ?r))
+                (<= (fin-reserva ?re) (fin-reserva ?r))
+              )
+              (and
+                (>= (inicio-reserva ?r) (inicio-reserva ?re))
+                (<= (fin-reserva ?r) (fin-reserva ?re))
+              )
             )
           )
         )
       )
     )
-    :effect (and (reserva-comprobada ?r) (habitacion-reservada ?r ?h) )
+    :effect (and (reserva-comprobada ?r) (habitacion-reservada ?r ?h) (increase (reservas-descartadas) 1))
   )
 
   (:action descartar-reserva
     :parameters (?r - reserva)
     :precondition (not (reserva-comprobada ?r))
-    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 1))
+    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 2))
   )
 )

@@ -1,6 +1,6 @@
 (define (problem problema_ext_1)
 	(:domain dominio_hotel_ext_1)
-	(:objects 
+	(:objects
 		H001 H002 H003 H004 H005 H006 H007 H008 H009 H010 - habitacion
 		H011 H012 H013 H014 H015 H016 H017 H018 H019 H020 - habitacion
 		H021 H022 H023 H024 H025 - habitacion
@@ -385,9 +385,6 @@
 		(forall (?r - reserva) (reserva-comprobada ?r))
 	)
 	(:metric minimize
-		(+
-			(* (reservas-descartadas) 1)
-			0
-		)
+			(reservas-descartadas)
 	)
 )
