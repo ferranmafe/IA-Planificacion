@@ -44,16 +44,18 @@
     )
     :effect (and
       (reserva-comprobada ?r)
+      (habitacion-reservada ?r ?h)
       (increase (plazas-desperdiciadas) (- (plazas-habitacion ?h) (personas-reserva ?r)))
       (when (not (habitacion-abierta ?h))
         (and (habitacion-abierta ?h) (increase (habitaciones-abiertas) 1))
       )
+      (increase (reservas-descartadas) 1)
     )
   )
 
   (:action descartar-reserva
     :parameters (?r - reserva)
     :precondition (not (reserva-comprobada ?r))
-    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 1))
+    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 2))
   )
 )
