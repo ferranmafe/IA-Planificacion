@@ -120,6 +120,10 @@ def generate_content(ext, rooms, res):
     content += initialize_room_atr(rooms)
     content += initialize_booking_atr(res)
     content += "\t\t(= (reservas-descartadas) 0)\n"
+    if (ext == 3 || ext || 4):
+        content += "\t\t(= (plazas-desperdiciadas) 0)\n"
+    if ext == 4:
+        content += "\t\t(= (habitaciones-abiertas) 0)\n"
     content += "\t)\n"
     content += "\t(:goal\n"
     content += "\t\t(forall (?r - reserva) (reserva-comprobada ?r))\n"
