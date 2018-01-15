@@ -53,7 +53,7 @@
     :precondition (not (reserva-comprobada ?r))
     :effect (and
       (reserva-comprobada ?r)
-      (increase (reservas-descartadas) 2)
+      (increase (reservas-descartadas) 6)
     )
   )
 )

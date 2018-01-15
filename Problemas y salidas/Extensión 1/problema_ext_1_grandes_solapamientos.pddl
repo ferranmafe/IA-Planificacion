@@ -2,7 +2,7 @@
   (:domain dominio_hotel_ext_1)
   (:objects
     h001 h002 - habitacion
-    r001 r002 r003 r004 r005 r006 - reserva
+    r001 r002 r003 r004 r005 r006 r007 r008 - reserva
   )
   (:init
     (= (plazas-habitacion h001) 4)
@@ -13,18 +13,24 @@
     (= (personas-reserva r004) 4)
     (= (personas-reserva r005) 4)
     (= (personas-reserva r006) 4)
+    (= (personas-reserva r007) 4)
+    (= (personas-reserva r008) 4)
     (= (inicio-reserva r001) 1)
-    (= (fin-reserva r001) 30)
+    (= (fin-reserva r001) 10)
     (= (inicio-reserva r002) 1)
-    (= (fin-reserva r002) 30)
-    (= (inicio-reserva r003) 1)
-    (= (fin-reserva r003) 15)
-    (= (inicio-reserva r004) 1)
-    (= (fin-reserva r004) 15)
-    (= (inicio-reserva r005) 16)
+    (= (fin-reserva r002) 10)
+    (= (inicio-reserva r003) 11)
+    (= (fin-reserva r003) 20)
+    (= (inicio-reserva r004) 11)
+    (= (fin-reserva r004) 20)
+    (= (inicio-reserva r005) 1)
     (= (fin-reserva r005) 30)
-    (= (inicio-reserva r006) 16)
+    (= (inicio-reserva r006) 1)
     (= (fin-reserva r006) 30)
+    (= (inicio-reserva r007) 21)
+    (= (fin-reserva r007) 30)
+    (= (inicio-reserva r008) 21)
+    (= (fin-reserva r008) 30)
     (= (reservas-descartadas) 0)
   )
 

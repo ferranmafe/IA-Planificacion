@@ -52,6 +52,6 @@
   (:action descartar-reserva
     :parameters (?r - reserva)
     :precondition (not (reserva-comprobada ?r))
-    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 2))
+    :effect (and (reserva-comprobada ?r) (increase (reservas-descartadas) 6))
   )
 )
