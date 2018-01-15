@@ -95,12 +95,12 @@ def generate_metrics(ext):
         metrics += "\t\t\t(* (reservas-descartadas) 1)\n"
         metrics += "\t\t\t0\n"
     elif ext == 3:
-        metrics += "\t\t\t(* (reservas-descartadas) 3)\n"
+        metrics += "\t\t\t(* (reservas-descartadas) 5)\n"
         metrics += "\t\t\t(* (plazas-desperdiciadas) 1)\n"
     elif ext == 4:
-        metrics += "\t\t\t(* (reservas-descartadas) 3)\n"
+        metrics += "\t\t\t(* (reservas-descartadas) 10)\n"
         metrics += "\t\t\t(+\n"
-        metrics += "\t\t\t\t(* (habitaciones-abiertas) 2)\n"
+        metrics += "\t\t\t\t(* (habitaciones-abiertas) 5)\n"
         metrics += "\t\t\t\t(* (plazas-desperdiciadas) 1)\n"
         metrics += "\t\t\t)\n"
     metrics += "\t\t)\n"
@@ -120,7 +120,7 @@ def generate_content(ext, rooms, res):
     content += initialize_room_atr(rooms)
     content += initialize_booking_atr(res)
     content += "\t\t(= (reservas-descartadas) 0)\n"
-    if (ext == 3 || ext || 4):
+    if ext == 3 or 4:
         content += "\t\t(= (plazas-desperdiciadas) 0)\n"
     if ext == 4:
         content += "\t\t(= (habitaciones-abiertas) 0)\n"
