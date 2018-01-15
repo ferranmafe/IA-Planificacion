@@ -42,7 +42,11 @@
         )
       )
     )
-    :effect (and (reserva-comprobada ?r) (habitacion-reservada ?r ?h) (increase (reservas-descartadas) 1))
+    :effect (and
+      (reserva-comprobada ?r)
+      (habitacion-reservada ?r ?h)
+      (increase (reservas-descartadas) 1)
+    )
   )
 
   (:action descartar-reserva

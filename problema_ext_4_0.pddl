@@ -1,6 +1,6 @@
 (define (problem problema_ext_4)
 	(:domain dominio_hotel_ext_4)
-	(:objects 
+	(:objects
 		H001 H002 H003 H004 H005 - habitacion
 		R001 R002 R003 R004 R005 R006 R007 R008 R009 R010 - reserva
 	)
