@@ -1,0 +1,82 @@
+
+ff: parsing domain file
+domain 'DOMINIO_HOTEL_EXT_4' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEMA_EXT_4' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((10.00*[RF2](RESERVAS-DESCARTADAS)5.00*[RF0](HABITACIONES-ABIERTAS)1.00*[RF1](PLAZAS-DESPERDICIADAS)) - () + 0.00)
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((10.00*[RF2](RESERVAS-DESCARTADAS)5.00*[RF0](HABITACIONES-ABIERTAS)1.00*[RF1](PLAZAS-DESPERDICIADAS)) - () + 0.00)
+
+advancing to distance:   24
+                         23
+                         22
+                         21
+                         20
+                         19
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: ASIGNAR-RESERVA H008 R024
+        1: ASIGNAR-RESERVA H008 R023
+        2: ASIGNAR-RESERVA H008 R020
+        3: ASIGNAR-RESERVA H008 R003
+        4: ASIGNAR-RESERVA H006 R022
+        5: ASIGNAR-RESERVA H006 R011
+        6: ASIGNAR-RESERVA H012 R015
+        7: ASIGNAR-RESERVA H001 R010
+        8: ASIGNAR-RESERVA H001 R008
+        9: ASIGNAR-RESERVA H004 R005
+       10: ASIGNAR-RESERVA H004 R021
+       11: ASIGNAR-RESERVA H004 R012
+       12: ASIGNAR-RESERVA H004 R016
+       13: ASIGNAR-RESERVA H004 R004
+       14: ASIGNAR-RESERVA H002 R019
+       15: ASIGNAR-RESERVA H002 R002
+       16: ASIGNAR-RESERVA H003 R018
+       17: ASIGNAR-RESERVA H003 R013
+       18: ASIGNAR-RESERVA H003 R006
+       19: ASIGNAR-RESERVA H010 R017
+       20: ASIGNAR-RESERVA H009 R014
+       21: ASIGNAR-RESERVA H009 R007
+       22: ASIGNAR-RESERVA H015 R009
+       23: ASIGNAR-RESERVA H011 R001
+     
+
+time spent:    0.01 seconds instantiating 24 easy, 218 hard action templates
+               0.00 seconds reachability analysis, yielding 682 facts and 242 actions
+               0.00 seconds creating final representation with 516 relevant facts, 3 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.08 seconds searching, evaluating 2403 states, to a max depth of 0
+               0.09 seconds total time
+

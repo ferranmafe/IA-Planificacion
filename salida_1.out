@@ -1,0 +1,22 @@
+
+ff: parsing domain file
+domain 'DOMINIO_HOTEL_EXT_1' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEMA_CASO_BASE' defined
+ ... done.
+
+
+predicate RESERVA-COMPROBADA is declared to use unknown or empty type RESERVA
+
+
+ff: parsing domain file
+domain 'DOMINIO_HOTEL_EXT_1' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEMA_CASO_BASE' defined
+ ... done.
+
+
+predicate RESERVA-COMPROBADA is declared to use unknown or empty type RESERVA
+

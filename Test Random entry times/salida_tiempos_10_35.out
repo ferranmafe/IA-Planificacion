@@ -1,0 +1,104 @@
+
+ff: parsing domain file
+domain 'DOMINIO_HOTEL_EXT_4' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEMA_EXT_4' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((10.00*[RF2](RESERVAS-DESCARTADAS)5.00*[RF0](HABITACIONES-ABIERTAS)1.00*[RF1](PLAZAS-DESPERDICIADAS)) - () + 0.00)
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((10.00*[RF2](RESERVAS-DESCARTADAS)5.00*[RF0](HABITACIONES-ABIERTAS)1.00*[RF1](PLAZAS-DESPERDICIADAS)) - () + 0.00)
+
+advancing to distance:   35
+                         34
+                         33
+                         32
+                         31
+                         30
+                         29
+                         28
+                         27
+                         26
+                         25
+                         24
+                         23
+                         22
+                         21
+                         20
+                         19
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: ASIGNAR-RESERVA H002 R032
+        1: ASIGNAR-RESERVA H002 R023
+        2: ASIGNAR-RESERVA H003 R035
+        3: ASIGNAR-RESERVA H003 R027
+        4: ASIGNAR-RESERVA H003 R002
+        5: ASIGNAR-RESERVA H003 R001
+        6: ASIGNAR-RESERVA H003 R034
+        7: ASIGNAR-RESERVA H003 R021
+        8: ASIGNAR-RESERVA H001 R028
+        9: ASIGNAR-RESERVA H001 R010
+       10: ASIGNAR-RESERVA H001 R022
+       11: ASIGNAR-RESERVA H006 R026
+       12: ASIGNAR-RESERVA H006 R009
+       13: ASIGNAR-RESERVA H006 R006
+       14: ASIGNAR-RESERVA H004 R014
+       15: ASIGNAR-RESERVA H008 R008
+       16: ASIGNAR-RESERVA H005 R025
+       17: ASIGNAR-RESERVA H005 R007
+       18: ASIGNAR-RESERVA H007 R024
+       19: ASIGNAR-RESERVA H007 R015
+       20: DESCARTAR-RESERVA R019
+       21: DESCARTAR-RESERVA R018
+       22: DESCARTAR-RESERVA R005
+       23: DESCARTAR-RESERVA R004
+       24: DESCARTAR-RESERVA R033
+       25: DESCARTAR-RESERVA R031
+       26: DESCARTAR-RESERVA R030
+       27: DESCARTAR-RESERVA R029
+       28: DESCARTAR-RESERVA R020
+       29: DESCARTAR-RESERVA R017
+       30: ASIGNAR-RESERVA H010 R003
+       31: DESCARTAR-RESERVA R016
+       32: ASIGNAR-RESERVA H009 R013
+       33: DESCARTAR-RESERVA R012
+       34: ASIGNAR-RESERVA H007 R011
+     
+
+time spent:    0.01 seconds instantiating 35 easy, 231 hard action templates
+               0.00 seconds reachability analysis, yielding 671 facts and 266 actions
+               0.00 seconds creating final representation with 552 relevant facts, 3 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.19 seconds searching, evaluating 3213 states, to a max depth of 0
+               0.20 seconds total time
+

@@ -1,0 +1,74 @@
+
+ff: parsing domain file
+domain 'DOMINIO_HOTEL_EXT_4' defined
+ ... done.
+ff: parsing problem file
+problem 'PROBLEMA_EXT_4' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((10.00*[RF2](RESERVAS-DESCARTADAS)5.00*[RF0](HABITACIONES-ABIERTAS)1.00*[RF1](PLAZAS-DESPERDICIADAS)) - () + 0.00)
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((10.00*[RF2](RESERVAS-DESCARTADAS)5.00*[RF0](HABITACIONES-ABIERTAS)1.00*[RF1](PLAZAS-DESPERDICIADAS)) - () + 0.00)
+
+advancing to distance:   20
+                         19
+                         18
+                         17
+                         16
+                         15
+                         14
+                         13
+                         12
+                         11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: ASIGNAR-RESERVA H019 R015
+        1: ASIGNAR-RESERVA H019 R014
+        2: ASIGNAR-RESERVA H005 R008
+        3: ASIGNAR-RESERVA H019 R001
+        4: ASIGNAR-RESERVA H003 R020
+        5: ASIGNAR-RESERVA H003 R013
+        6: ASIGNAR-RESERVA H002 R019
+        7: ASIGNAR-RESERVA H002 R018
+        8: ASIGNAR-RESERVA H002 R007
+        9: ASIGNAR-RESERVA H002 R005
+       10: ASIGNAR-RESERVA H002 R004
+       11: ASIGNAR-RESERVA H006 R017
+       12: ASIGNAR-RESERVA H007 R016
+       13: ASIGNAR-RESERVA H001 R012
+       14: ASIGNAR-RESERVA H004 R011
+       15: ASIGNAR-RESERVA H004 R002
+       16: ASIGNAR-RESERVA H009 R010
+       17: ASIGNAR-RESERVA H014 R009
+       18: ASIGNAR-RESERVA H010 R006
+       19: ASIGNAR-RESERVA H011 R003
+     
+
+time spent:    0.01 seconds instantiating 20 easy, 219 hard action templates
+               0.00 seconds reachability analysis, yielding 699 facts and 239 actions
+               0.00 seconds creating final representation with 518 relevant facts, 3 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.08 seconds searching, evaluating 1970 states, to a max depth of 0
+               0.09 seconds total time
+
